@@ -1,0 +1,65 @@
+{
+  "hysteresis_time": 1.0,
+  "horizon": 10,
+  "strategy": "S3",
+
+  "thermal_model": {
+    "alphaG": 0.01,
+    "kThrottle": 1.0,
+    "internalResistance": 0.01,
+    "modelParam_a": 0.1,
+    "modelParam_b": 0.01,
+    "gamma": 0.5
+  },
+
+  "mpc_weights": {
+    "wEnergy": 1.0,
+    "wTemp": 5.0,
+    "wSwitch": 0.5,
+    "wTerminal": 2.0,
+    "wFFBias": 0.1
+  },
+
+  "limits": {
+    "tempLow": 25,
+    "tempRef": 30,
+    "tempMedium": 35,
+    "tempHigh": 42,
+    "tempMax": 50
+  },
+
+  "cooling": {
+    "power": [0, 0.5, 1.0, 1.5],
+    "energy": [0, 1, 2, 3]
+  },
+
+  "control": {
+    "propulsionPowerGain": 1.0,
+
+    "throttleWeightInLoad": 0.5,
+    "throttleRampEco": 0.02,
+    "throttleRampPower": 0.05,
+
+    "solarMovingAvgWindow": 3,
+
+    "solRadMovingAvgWindowSize": 5,
+    "solRadTrendWindowSize": 3,
+
+    "kSolRadLevel": 0.01,
+    "kSolRadTrend": 0.5,
+
+    "ffToMedium": 5,
+    "ffToHigh": 10
+  },
+
+  "trend_monitor": {
+    "tempRiseThreshold": 0.5,
+    "movingAvgWindowSize": 5,
+    "trendWindowSize": 3
+  },
+
+  "safety_checks": {
+    "temp_max": 50.0
+  }
+}
+
